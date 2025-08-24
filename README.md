@@ -19,6 +19,7 @@ pip install wave-solver-2d
 ## Usage
 ```
 
+
 # Show help
 wave-solver --help
 
@@ -60,5 +61,6 @@ solver.solve(T=2.0)
 
 feel free to drop a PR!!    
 reach me at : Celestine1729@proton.me <3
+
 
 
