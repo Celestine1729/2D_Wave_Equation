@@ -1,0 +1,2 @@
+[console_scripts]
+wave-solver = wave_solver.cli:main
