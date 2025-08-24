@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: wave-solver-2d
-Version: 0.1.0
+Version: 0.3.0
 Summary: A modular 2D wave equation solver using finite difference methods
 Home-page: https://github.com/celestine1729/wave-solver-2d
 Author: Celestine1729
@@ -8,7 +8,7 @@ Author-email: Celestine1729@proton.me
 Classifier: Development Status :: 3 - Alpha
 Classifier: Intended Audience :: Science/Research
 Classifier: Intended Audience :: Education
-Classifier: License :: OSI Approved :: GPL V 3.0
+Classifier: License :: OSI Approved :: GPL V3.0
 Classifier: Operating System :: OS Independent
 Classifier: Programming Language :: Python :: 3
 Classifier: Programming Language :: Python :: 3.7
@@ -59,10 +59,50 @@ A modular, testable implementation of a 2D wave equation solver using finite dif
 ## Installation
 
 ```bash
-# Install from source
-git clone https://github.com/yourusername/wave-solver-2d.git
-cd wave-solver-2d
-pip install -e .
 
-# Or install directly from PyPI (when published)
 pip install wave-solver-2d
+```
+## Usage
+```
+# Show help
+wave-solver --help
+
+# Run with default parameters
+wave-solver
+
+# Run with custom parameters
+wave-solver --wave-speed 1.5 --domain-size 3.0 --resolution 151 --time 4.0
+
+# Run without animation
+wave-solver --no-animation --time 2.0
+
+# Use different color maps
+wave-solver --colormap seismic
+```
+## API 
+```
+from wave_solver import WaveEquationSolver2D, DirichletBC, InitialCondition
+import numpy as np
+
+# Create initial condition
+ic = InitialCondition(
+    displacement=lambda x, y: np.exp(-((x-1)**2 + (y-1)**2) / 0.1)
+)
+
+# Create solver
+solver = WaveEquationSolver2D(
+    c=1.0, Lx=2.0, Ly=2.0, Nx=101, Ny=101,
+    boundary_condition=DirichletBC(),
+    initial_condition=ic
+)
+
+# Solve for 2 seconds
+solver.solve(T=2.0)
+
+```
+
+## Contribute and Contact
+
+feel free to drop a PR!!    
+reach me at : Celestine1729@proton.me <3
+

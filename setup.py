@@ -8,7 +8,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 
 setup(
     name="wave-solver-2d",
-    version="0.2.0",
+    version="0.3.0",
     author="Celestine1729",
     author_email="Celestine1729@proton.me",
     description="A modular 2D wave equation solver using finite difference methods",

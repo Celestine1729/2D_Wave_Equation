@@ -1,6 +1,7 @@
 LICENSE
 README.md
 setup.py
+test/test_wave_solver.py
 wave_solver/__init__.py
 wave_solver/boundary_conditions.py
 wave_solver/cli.py
