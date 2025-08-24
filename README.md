@@ -19,6 +19,10 @@ pip install wave-solver-2d
 ## Usage
 ```
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> Releases
 # Show help
 wave-solver --help
 
@@ -62,3 +66,7 @@ feel free to drop a PR!!
 reach me at : Celestine1729@proton.me <3
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> Releases
