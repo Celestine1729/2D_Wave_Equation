@@ -15,8 +15,13 @@ A modular, testable implementation of a 2D wave equation solver using finite dif
 ```bash
 # Install from source
 git clone https://github.com/yourusername/wave-solver-2d.git
-cd wave-solver-2d
+cd wave-solver
 pip install -e .
 
-# Or install directly from PyPI (when published)
+# Or install directly from PyPI
 pip install wave-solver-2d
+
+## Usage
+ ```
+wave-solver -h
+```
