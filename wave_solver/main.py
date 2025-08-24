@@ -6,7 +6,6 @@ from wave_solver.boundary_conditions import DirichletBC
 from wave_solver.initial_conditions import InitialCondition
 from wave_solver.wave_solver import WaveEquationSolver2D
 
-
 def create_animation(solver: WaveEquationSolver2D, T: float, interval: int = 50) -> FuncAnimation:
     """
     Create an animation of the solution
@@ -28,15 +27,25 @@ def create_animation(solver: WaveEquationSolver2D, T: float, interval: int = 50)
     ax.set_xlabel("x")
     ax.set_ylabel("y")
     
+    # Calculate the correct number of frames
+    n_frames = int(T / solver.dt) + 1  # +1 to include initial state
+    
+    # Store current time
+    current_time = [0]  # Use a list to make it mutable in the closure
+    
     def update(frame):
-        solver.step()
+        # Only step if we're not at the first frame
+        if frame > 0:
+            solver.step()
+            current_time[0] += solver.dt
+        
         img.set_array(solver.u.T)
-        ax.set_title(f"Time = {frame * solver.dt:.2f}")
+        ax.set_title(f"Time = {current_time[0]:.2f}")
         return [img]
     
-    n_frames = int(T / solver.dt)
     return FuncAnimation(fig, update, frames=n_frames, 
-                        interval=interval, blit=True)
+                        interval=interval, blit=True, repeat=False)
+
 
 def main():
     
