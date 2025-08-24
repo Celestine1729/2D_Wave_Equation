@@ -20,8 +20,11 @@ pip install -e .
 
 # Or install directly from PyPI
 pip install wave-solver-2d
+```
 
 ## Usage
- ```
-wave-solver -h
 ```
+wave-solver -h
+
+```
+
