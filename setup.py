@@ -8,7 +8,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 
 setup(
     name="wave-solver-2d",
-    version="0.3.0",
+    version="0.4.0",
     author="Celestine1729",
     author_email="Celestine1729@proton.me",
     description="A modular 2D wave equation solver using finite difference methods",
@@ -20,7 +20,7 @@ setup(
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Science/Research",
         "Intended Audience :: Education",
-        "License :: OSI Approved :: GPL V3.0",
+        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
         "Operating System :: OS Independent",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.7",
