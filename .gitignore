@@ -1,3 +1,4 @@
 .github/
 build/
 dist/
+wave_solver_2d.egg-info/
